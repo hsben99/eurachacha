@@ -32,11 +32,11 @@
 <!-- Custom styles -->
 <link rel="stylesheet" href="${path}/resources/css/styles.css">
 
-
+<!--[if lt IE 9]> <script src="${path}/resources/js/html5shiv.js"></script> <![endif]-->
 </head>
 <body class="home">
 
-	<header id="header" style="background-color: #FF5F00;">
+	<header id="header">
 		<div id="head" class="parallax" parallax-speed="2">
 		
 		<% if(session.getAttribute("id") == null || session.getAttribute("id") == ""){ %>
@@ -50,6 +50,8 @@
 			</div> 
 			<% } %>
 			<h1 id="logo" class="text-center" ><a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a></h1>
+			
+			<h3 class="text-center" style="margin-top: 50px;">의료산업 발전의 중요함을 고민합니다.</h3>
 		</div>
 		<nav class="navbar navbar-default navbar-sticky">
 			<div class="container-fluid">
@@ -61,12 +63,14 @@
 							class="icon-bar"></span>
 					</button>
 				</div>
+
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 					<li><a href="#" onclick="callList('1','','');" style="font-weight:700;" >전체</a></li>
 						<li><a href="#" onclick="callList('1','','medical');" style="font-weight:700;" >의료·학술</a></li>
 						<li><a href="#" onclick="callList('1','','bio');" style="font-weight:700;">제약·바이오</a></li>
-						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700;">의료기기·IT</a></li> 
+						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700;">의료기기·IT</a></li>
+						<li><a href="#"  onclick="location.href='/eurachacha'" style="font-weight:700;" >의라차차</a></li> 
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -88,38 +92,45 @@
 		</div>
 	</main>
 
-	<footer id="footer" 
-			style="border-top: 1px solid gray;">
-		<div class="widget-body" 
-			 style="
-			 	margin-bottom:20px;
-			 	padding-left:50px;
-				padding-right:50px;
-				"> 
-			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
-			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
-			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
-			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
-			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
-		</div>
-		<div 
-			style="
-				background-color: #212a34; 
-				color:white; 
-				padding-top: 20px;
-				padding-bottom: 70px;
-				padding-left:50px;
-				padding-right:50px;
-				display: flex;
-				justify-content: space-between;">
-			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
-			<div> 
-				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
-				<span> 청소년보호정책</span>
-			</div>	
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class=" widget">
+					<div class="widget-body">
+						<p>
+							사업자번호 236-30-00585 <br> 등록번호 서울, 아05141 <br> 등록일자 2018. 4. 25 <br> <br> 발행인 겸 편집인 박원빈<br> 개인정보책임자 박순보 <br>
+							청소년보호책임자 박지연
+						</p>
+					</div>
+				</div>
+				<!--sbtest  -->
+				<!-- <div class="col-md-3 widget">
+
+					<div class="widget-body">
+						<p class="follow-me-icons">청소년 보호정책</p>
+						<p><a href="/teenProtect">청소년 보호정책</a></p> 
+						
+					</div>
+				</div>
+
+				<div class="col-md-3 widget">
+
+					<div class="widget-body"></div>
+				</div>
+
+				<div class="col-md-3 widget">
+					<div class="widget-body">
+						<p>
+							TEL : 02-470-2014<br> <a href="mailto:#">contact@beenpictures.com</a><br>
+							<br> 서울시 성동구 무학로 14길 18 가동 602호(홍익동 한신그린빌)
+						</p>
+					</div>
+				</div> -->
+
+			</div>
+			<!-- /row of widgets -->
 		</div>
 	</footer>
-	
 	<script>
 	$(function() {	
 		callList();
