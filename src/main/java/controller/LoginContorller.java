@@ -13,7 +13,7 @@ import dao.UserDao;
 import dto.User;
 
 @Controller
-public class LoginController {
+public class LoginContorller {
 	
 	@Autowired
 	UserDao userDao;

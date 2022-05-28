@@ -36,8 +36,9 @@
 </head>
 <body class="home">
 
-	<header id="header" style="background-color: #FF5F00;">
-		<div id="head" class="parallax" parallax-speed="2">
+	<header id="header">		
+	
+		<div id="head" class="parallax" parallax-speed="2" style="padding: 0;">
 		
 		<% if(session.getAttribute("id") == null || session.getAttribute("id") == ""){ %>
 			<div style="text-align: right; padding-right: 3vw;" >
@@ -49,7 +50,10 @@
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write</span>
 			</div> 
 			<% } %>
-			<h1 id="logo" class="text-center" ><a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a></h1>
+			<h1 id="logo" class="text-center" style=" height: 200px; ">
+				<!-- <a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a> -->
+				<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
+			</h1>
 		</div>
 		<nav class="navbar navbar-default navbar-sticky">
 			<div class="container-fluid">
@@ -63,7 +67,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-					<li><a href="#" onclick="callList('1','','');" style="font-weight:700;" >전체</a></li>
+						<li><a href="#" onclick="callList('1','','');" style="font-weight:700;" >전체</a></li>
 						<li><a href="#" onclick="callList('1','','medical');" style="font-weight:700;" >의료·학술</a></li>
 						<li><a href="#" onclick="callList('1','','bio');" style="font-weight:700;">제약·바이오</a></li>
 						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700;">의료기기·IT</a></li> 
@@ -95,6 +99,7 @@
 			 	margin-bottom:20px;
 			 	padding-left:50px;
 				padding-right:50px;
+				font-size:1rem;
 				"> 
 			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
 			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
@@ -115,7 +120,7 @@
 			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
 			<div> 
 				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
-				<span> 청소년보호정책</span>
+				<span><a href="#" onclick="location.href='/teenProtect'"> 청소년보호정책</a></span>
 			</div>	
 		</div>
 	</footer>

@@ -39,7 +39,7 @@
 <body class="home">
 
 	<header id="header">
-		<div id="head" class="parallax" parallax-speed="2">
+		<div id="head" class="parallax" parallax-speed="2" style="padding:0px;">
 
 			<%
 				if (session.getAttribute("id") == null || session.getAttribute("id") == "") {
@@ -57,7 +57,9 @@
 			<%
 				}
 			%>
-			<h1 id="logo" class="text-center" onclick="location.href='/'">의라차차</h1>
+			<h1 id="logo" class="text-center" onclick="location.href='/'" style="overflow: hidden; height: 200px;">
+				<img alt="logo" src="${path}/resources/images/logo.svg" style="position: relative; top: -100px; left: -300px;"/>
+			</h1>
 		</div>
 		
 	</header>
@@ -97,46 +99,36 @@
 
 	</main>
 
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 widget">
-					<div class="widget-body">
-						<p>
-							사업자번호 236-30-00585 <br> 등록번호 서울, 아05141 <br> 등록일자 2018.
-							4. 25 <br> <br> 발행인 겸 편집인 박원빈<br> 개인정보책임자 박순보 <br>
-							청소년보호책임자 박지연
-						</p>
-					</div>
-				</div>
-
-				<div class="col-md-3 widget">
-
-					<div class="widget-body">
-						<!-- <p class="follow-me-icons">청소년 보호정책</p> -->
-						<p>
-							<a href="/teenProtect">청소년 보호정책</a>
-						</p>
-
-					</div>
-				</div>
-
-				<div class="col-md-3 widget">
-
-					<div class="widget-body"></div>
-				</div>
-
-				<div class="col-md-3 widget">
-					<div class="widget-body">
-						<p>
-							TEL : 02-470-2014<br> <a href="mailto:#">contact@beenpictures.com</a><br>
-							<br> 서울시 성동구 무학로 14길 18 가동 602호(홍익동 한신그린빌)
-						</p>
-					</div>
-				</div>
-
-			</div>
-			<!-- /row of widgets -->
+	<footer id="footer" 
+			style="border-top: 1px solid gray;">
+		<div class="widget-body" 
+			 style="
+			 	margin-bottom:20px;
+			 	padding-left:50px;
+				padding-right:50px;
+				font-size:1rem;
+				"> 
+			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
+			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
+			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
+			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
+			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
+		</div>
+		<div 
+			style="
+				background-color: #212a34; 
+				color:white; 
+				padding-top: 20px;
+				padding-bottom: 70px;
+				padding-left:50px;
+				padding-right:50px;
+				display: flex;
+				justify-content: space-between;">
+			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
+			<div> 
+				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
+				<span><a href="#" onclick="location.href='/teenProtect'"> 청소년보호정책</a></span>
+			</div>	
 		</div>
 	</footer>
 	<script>
