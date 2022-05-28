@@ -20,7 +20,7 @@ public class DeleteController {
 	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.GET)
 	public String deleteById(@PathVariable int id, HttpSession session, Model model) {
 		 //세션체크
-		 if(session.getAttribute("id") == null || session.getAttribute("id") == "") {
+		 if(session.getAttribute("role") == null || session.getAttribute("role") == "") {
 			 model.addAttribute("message","로그인하세요.");
 			return "assets/loginFail";
 		 }

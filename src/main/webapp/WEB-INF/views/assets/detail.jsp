@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,24 +22,25 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="${path}/resources/css/styles.css">
-
-	<!--[if lt IE 9]> <script src="${path}/resources/js/html5shiv.js"></script> <![endif]-->
+	
 </head>
 <body class="home">
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="2" style="padding:0px;">
-			<% if(session.getAttribute("id") == null || session.getAttribute("id") == ""){ %>
+		<% if(session.getAttribute("role") == null || session.getAttribute("role") == ""){ %>
 			<div style="text-align: right; padding-right: 3vw;" >
 				<span onclick="location.href='/moveToLogin'" >login</span> 
 			</div>
-			<% }else{ %>
-			 
+		<% }else if((session.getAttribute("role") != null || session.getAttribute("role") != "") && !(session.getAttribute("role").equals("admin")) ){ %>	
 			<div style="text-align: right; padding-right: 3vw;" >
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write</span>
 			</div> 
-			<% } %>
-			
-		<h1 id="logo" class="text-center" onclick="location.href='/'" style="font-weight:900; height: 200px; overflow: hidden;">
+		<% }else if(session.getAttribute("role") != null || session.getAttribute("role") != "" && session.getAttribute("role").equals("admin") ){ %>			 
+			<div style="text-align: right; padding-right: 3vw;" >
+				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
+			</div> 
+		<% } %>
+		<h1 id="logo" class="text-center" onclick="location.href='/'" style="font-weight:900; height: 200px; overflow: hidden; margin: 0;">
 			<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
 		</h1>
 		
@@ -51,13 +53,14 @@
 </header>
 
 <main id="main" style="min-height:62vh;">
-
 	<div class="container">
-		<% if(session.getAttribute("id") != null && session.getAttribute("id") != ""){ %>
+		<% if(session.getAttribute("id") != null &&
+		      (session.getAttribute("id").equals(request.getAttribute("writerId")) || session.getAttribute("role").equals("admin"))
+		      ){ %>
 		<div style="text-align: right;">
 			<span onclick="location.href='/deleteById/${id}'">삭제하기</span>
 		</div>
-		<%} %>								
+		<%} %>	
 		<div class="row topspace">
 			<div class="col-sm-8 col-sm-offset-2">
 							

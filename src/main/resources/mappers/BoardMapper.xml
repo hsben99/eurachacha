@@ -4,8 +4,8 @@
 <mapper namespace="boardMapper" >
 
 		<insert id="insertBoard" parameterType="dto.BoardDto">
-		insert into board(title,subTitle, content, deleteYn, regDate, category) values(
-			#{title},#{subTitle}, #{content}, #{deleteYn}, now(), #{category}
+		insert into board(title,subTitle, content, deleteYn, regDate, category, writerId) values(
+			#{title},#{subTitle}, #{content}, #{deleteYn}, now(), #{category}, #{writerId}
 		)
 	</insert>
 	

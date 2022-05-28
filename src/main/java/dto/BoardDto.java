@@ -10,6 +10,15 @@ public class BoardDto {
 	private String regDate;
 	private String deleteYn;
 	private String category; // medical ,bio, tech
+	private String writerId;
+
+	public String getWriterId() {
+		return writerId;
+	}
+
+	public void setWriterId(String writerId) {
+		this.writerId = writerId;
+	}
 
 	public String getCategory() {
 		return category;
@@ -42,7 +51,7 @@ public class BoardDto {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
 	public String getSubTitle() {
 		return subTitle;
 	}
@@ -50,6 +59,7 @@ public class BoardDto {
 	public void setSubTitle(String subTitle) {
 		this.subTitle = subTitle;
 	}
+
 	public String getContent() {
 		return content;
 	}
@@ -76,8 +86,11 @@ public class BoardDto {
 
 	@Override
 	public String toString() {
-		return "BoardDto [id=" + id + ", title=" + title + ", content=" + content + ", regDate=" + regDate
-				+ ", deleteYn=" + deleteYn + "]";
+		return "BoardDto [runm=" + runm + ", id=" + id + ", title=" + title + ", subTitle=" + subTitle + ", content="
+				+ content + ", regDate=" + regDate + ", deleteYn=" + deleteYn + ", category=" + category + ", writerId="
+				+ writerId + "]";
 	}
+	
+	
 
 }

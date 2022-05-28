@@ -38,6 +38,7 @@ public class LoginContorller {
 		}
 		// 비번이 맞을때
 		session.setAttribute("role", loginUser.getRole());
+		session.setAttribute("id", loginUser.getId());
 		return "assets/index";
 		
 	}

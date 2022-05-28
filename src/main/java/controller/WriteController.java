@@ -22,13 +22,15 @@ public class WriteController {
 
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	@ResponseBody
-	public boolean write(MultipartHttpServletRequest fileRequest) {
+	public boolean write(MultipartHttpServletRequest fileRequest, HttpSession session) {
 		BoardDto boardDto = new BoardDto();
 		boardDto.setTitle(fileRequest.getParameter("title"));
 		boardDto.setSubTitle(fileRequest.getParameter("subTitle"));
 		boardDto.setContent(fileRequest.getParameter("content"));
 		boardDto.setDeleteYn("N");
 		boardDto.setCategory(fileRequest.getParameter("category"));
+		boardDto.setWriterId(session.getAttribute("id") != null ? session.getAttribute("id").toString() : "" );
+		
 		if (boardDao.insertBoard(boardDto) > 0) {
 			return true;	
 		}

@@ -52,7 +52,7 @@
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
 			</div> 
 		<% } %>
-			<h1 id="logo" class="text-center" style=" height: 200px; ">
+			<h1 id="logo" class="text-center" style=" height: 200px; margin: 0;">
 				<!-- <a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a> -->
 				<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
 			</h1>
@@ -102,8 +102,9 @@
 			 	padding-left:50px;
 				padding-right:50px;
 				font-size:1rem;
+				line-height: 36px; 
 				"> 
-			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
+			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">빈픽쳐스</p>
 			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
 			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
 			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>

@@ -57,7 +57,7 @@
 			<%
 				}
 			%>
-			<h1 id="logo" class="text-center" onclick="location.href='/'" style="overflow: hidden; height: 200px;">
+			<h1 id="logo" class="text-center" onclick="location.href='/'" style="overflow: hidden; height: 200px; margin: 0;">
 				<img alt="logo" src="${path}/resources/images/logo.svg" style="position: relative; top: -100px; left: -300px;"/>
 			</h1>
 		</div>
