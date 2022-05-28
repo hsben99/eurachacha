@@ -22,10 +22,15 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="register-form" method="post" action="/login">
-      <input type="text" placeholder="ID"/>
-      <input type="password" placeholder="password"/>      
-      <input type="text" placeholder="email address"/>      
+    <form class="register-form" method="post" action="/join">
+      <input type="text" placeholder="ID" maxlength="25" name="id"/>
+      <input type="password" placeholder="password" maxlength="25" name="password"/>
+      <input type="text" placeholder="name" maxlength="25" name="name"/>
+      <input type="email" placeholder="email address" maxlength="25" name="email"/>
+      <input type="text" placeholder="facebook" maxlength="35" name="facebook"/>
+      <input type="text" placeholder="twitter" maxlength="35"name="twitter"/>
+      <input type="text" placeholder="instagram" maxlength="35" name="instagram"/>
+      <input type="text" placeholder="introduce" maxlength="35" name="introduce"/>
       <button>create</button>
       <p class="message">이미 가입하셨나요?<a href="/moveToLogin">Sign In</a></p>
     </form>

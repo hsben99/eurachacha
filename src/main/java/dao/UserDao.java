@@ -13,6 +13,11 @@ public class UserDao {
 
 	public User getPassword(String id) {
 		return session.selectOne("userMapper.getPassword",id);		
+	}
+
+	public int join(User user) {
+		return session.insert("userMapper.joinUser",user);
+		
 	}	
 
 }
