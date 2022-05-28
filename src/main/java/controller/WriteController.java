@@ -41,7 +41,7 @@ public class WriteController {
 	public String writePage(Locale locale, Model model, HttpSession session) {
 
 		// 로그인 확인하고 세션 있으면 페이지 이동
-		if(null == session.getAttribute("id") || "" == session.getAttribute("id")) {
+		if(null == session.getAttribute("role") || "" == session.getAttribute("role")) {
 			model.addAttribute("message","로그인 후 글을 작성해주세요.");
 			return "assets/loginFail"; 
 		}

@@ -37,7 +37,7 @@ public class LoginContorller {
 			return "assets/loginFail";
 		}
 		// 비번이 맞을때
-		session.setAttribute("id", loginUser.getId());
+		session.setAttribute("role", loginUser.getRole());
 		return "assets/index";
 		
 	}

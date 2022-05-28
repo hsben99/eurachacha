@@ -24,4 +24,10 @@ public class HomeController {
 	public String eurachacha() {
 		return "assets/eurachacha";
 	}
+	@RequestMapping(value = "/moveToAdmin", method = RequestMethod.GET)
+	public String admin() {
+		return "assets/admin";
+	}
+	
+	
 }

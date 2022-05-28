@@ -11,8 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
-<script type="text/javascript"
-	src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <title >의라차차</title>
 
@@ -40,16 +39,19 @@
 	
 		<div id="head" class="parallax" parallax-speed="2" style="padding: 0;">
 		
-		<% if(session.getAttribute("id") == null || session.getAttribute("id") == ""){ %>
+		<% if(session.getAttribute("role") == null || session.getAttribute("role") == ""){ %>
 			<div style="text-align: right; padding-right: 3vw;" >
 				<span onclick="location.href='/moveToLogin'" >login</span> 
 			</div>
-			<% }else{ %>
-			 
+		<% }else if((session.getAttribute("role") != null || session.getAttribute("role") != "") && !(session.getAttribute("role").equals("admin")) ){ %>	
 			<div style="text-align: right; padding-right: 3vw;" >
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write</span>
 			</div> 
-			<% } %>
+		<% }else if(session.getAttribute("role") != null || session.getAttribute("role") != "" && session.getAttribute("role").equals("admin") ){ %>			 
+			<div style="text-align: right; padding-right: 3vw;" >
+				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
+			</div> 
+		<% } %>
 			<h1 id="logo" class="text-center" style=" height: 200px; ">
 				<!-- <a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a> -->
 				<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
@@ -119,8 +121,8 @@
 				justify-content: space-between;">
 			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
 			<div> 
-				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
-				<span><a href="#" onclick="location.href='/teenProtect'"> 청소년보호정책</a></span>
+				<span ><a href="/eurachacha">About BEENPICTURES</a></span>
+				<span><a href="/teenProtect"> 청소년보호정책</a></span>
 			</div>	
 		</div>
 	</footer>

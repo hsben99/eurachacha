@@ -15,5 +15,14 @@
 
 	</insert>
 	
+	<select id="getUserList" resultType="dto.User">
+		select * from user 
+		where role != 'admin'
+	</select>
+
+	<delete id="deleteUser">
+	delete from user
+	where id = #{id} 
+	</delete>	
 	
 </mapper>
