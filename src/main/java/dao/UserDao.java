@@ -28,6 +28,10 @@ public class UserDao {
 
 	public int deleteUser(User user) {
 		return session.delete("userMapper.deleteUser", user);
+	}
+
+	public User getUser(String id) {
+		return session.selectOne("userMapper.getUser", id);
 	}	
 
 }

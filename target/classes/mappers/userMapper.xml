@@ -19,10 +19,17 @@
 		select * from user 
 		where role != 'admin'
 	</select>
+	
+	<select id="getUser" resultType="dto.User">
+		select * from user
+		where id = #{id}
+	</select>
 
 	<delete id="deleteUser">
 	delete from user
 	where id = #{id} 
 	</delete>	
+	
+	
 	
 </mapper>

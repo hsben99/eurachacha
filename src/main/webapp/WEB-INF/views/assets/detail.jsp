@@ -72,6 +72,15 @@
 					<div class="entry-content">
 						${content}
 					</div>
+					<div id="writerInfo">
+						<div style="font-weight: 900;">ABOUT AUTHOR</div>
+						<br>
+						<div id="userID" style="color: #FF9100; font-weight: 900; padding-left: 15px;"> &nbsp;&nbsp;&nbsp; 박원빈</div>
+						<br>
+						<div id="userIntro" style="padding-left: 15px;"> &nbsp;&nbsp;&nbsp; 안녕하세요 아이유입니다.</div>	
+						
+					</div>
+					
 				</article> 
 			</div> 
 		</div>
@@ -109,10 +118,38 @@
 			</div>	
 		</div>
 	</footer>
+	
+	
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="${path}/resources/js/template.js"></script>
+
+
+<script>
+$(function() {
+	//파라미터 jsp el임
+	getUser('${writerId}');
+})
+
+const getUser = function(id) {
+
+	$.ajax({
+		contentType : "application/json; charset=utf-8",
+		dataType : "json",
+		method : "GET",
+		url : "/getUser/"+id,
+		success : function(result) {
+			$("#userID").html(result.user.name);
+			$("#userIntro").html(result.user.email);
+			console.log(result)
+		},
+		error : function(result) {
+			console.log("기자 정보 error");
+		}
+	});
+
+}
+</script>
 </body>
 </html>
