@@ -70,10 +70,10 @@
 		<nav class="navbar  navbar-sticky">
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#" onclick="callList('1','','');" style="font-weight:700;" >전체</a></li>
-						<li><a href="#" onclick="callList('1','','medical');" style="font-weight:700;" >의료·학술</a></li>
-						<li><a href="#" onclick="callList('1','','bio');" style="font-weight:700;">제약·바이오</a></li>
-						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700;">의료기기·IT</a></li> 
+						<li><a href="#" onclick="callList('1','','');" style="font-weight:700; color: black;" >전체</a></li>
+						<li><a href="#" onclick="callList('1','','medical');" style="font-weight:700; color: black; " >의료·학술</a></li>
+						<li><a href="#" onclick="callList('1','','bio');" style="font-weight:700; color: black;">제약·바이오</a></li>
+						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700; color: black;">의료기기·IT</a></li> 
 					</ul>
 				</div>
 		</nav>
