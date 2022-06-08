@@ -52,21 +52,22 @@
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
 			</div> 
 		<% } %>
-			<h1 id="logo" class="text-center" style=" height: 200px; margin: 0;">
-				<!-- <a onclick="callList();" style="color:black; text-decoration: none; font-weight:900; ">의라차차</a> -->
-				<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
-			</h1>
-		</div>
-		<nav class="navbar navbar-default navbar-sticky">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
+			<div class="text-center" style=" height: 100px; display: flex; justify-content: center; "> 
+				<div class="col-md-9 col-sm-12	" style=" display: flex; justify-content: space-around;">
+					<div class="" style="width: 34%"> 
+						<img alt="logo" src="${path}/resources/images/logo.png" onclick="callList();" style="height: 3.3rem; "/>
+					</div>
+					<div class="" style="width: 33%; overflow: hidden;">
+						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
+					</div>
+					<div class="" style="width: 33%; overflow: hidden;" >
+						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
+					</div> 
+				</div>	
+				
+			</div>
+		</div> 
+		<nav class="navbar  navbar-sticky">
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="#" onclick="callList('1','','');" style="font-weight:700;" >전체</a></li>
@@ -75,8 +76,6 @@
 						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700;">의료기기·IT</a></li> 
 					</ul>
 				</div>
-				<!--/.nav-collapse -->
-			</div>
 		</nav>
 	</header>
 	<main id="main" style="min-height:62vh;">
@@ -104,9 +103,9 @@
 				font-size:1rem;
 				line-height: 36px; 
 				"> 
-			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">빈픽쳐스</p>
-			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
-			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
+			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">의라차차</p>
+			<span>회사 : 빈픽쳐스 사업자번호 : 236-30-00585  등록번호 : 서울, 아05141</span><br>	
+			<span>등록일자 : 2018.4.25 주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
 			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
 			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
 		</div>
@@ -122,7 +121,7 @@
 				justify-content: space-between;">
 			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
 			<div> 
-				<span ><a href="/eurachacha">About BEENPICTURES</a></span>
+				<span ><a href="/eurachacha">About의라차차</a></span> 
 				<span><a href="/teenProtect"> 청소년보호정책</a></span>
 			</div>	
 		</div>
@@ -166,7 +165,7 @@
 				for (var i = 0; i < result.mainList.length; i++) {
 					$("#dataList")
 						.append(
-							"<div class='data-item col-sm-6 col-md-3' data-id="+result.mainList[i].id+" style='border: 1px solid; min-height: 20rem; max-height: 20rem; overflow: hidden; display:table-cell;'>"
+							"<div class='data-item col-sm-4 col-md-3 col-xs-6' data-id="+result.mainList[i].id+" style='border: 1px solid; min-height: 20rem; max-height: 20rem; overflow: hidden; display:table-cell;'>"
 								+ "<h3 class='text-center' >"+result.mainList[i].title+"</h3>"
 								+ "<p>"+result.mainList[i].subTitle+"</p>"
 								+ "</div>")
