@@ -55,7 +55,7 @@
 			<div class="text-center" style=" height: 100px; display: flex; justify-content: center; "> 
 				<div class="col-md-9 col-sm-12	" style=" display: flex; justify-content: space-around;">
 					<div class="" style="width: 34%"> 
-						<img alt="logo" src="${path}/resources/images/logo.png" onclick="callList();" style="height: 3.3rem; "/>
+						<img alt="logo" src="${path}/resources/images/logo.png" onclick="callList();" style="height: 3.3rem; cursor: pointer; "/>
 					</div>
 					<div class="" style="width: 33%; overflow: hidden;">
 						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
@@ -67,7 +67,7 @@
 				
 			</div>
 		</div> 
-		<nav class="navbar  navbar-sticky">
+		<nav class="">
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="#" onclick="callList('1','','');" style="font-weight:700; color: black;" >전체</a></li>
@@ -165,8 +165,8 @@
 				for (var i = 0; i < result.mainList.length; i++) {
 					$("#dataList")
 						.append(
-							"<div class='data-item col-sm-4 col-md-3 col-xs-6' data-id="+result.mainList[i].id+" style='border: 1px solid; min-height: 20rem; max-height: 20rem; overflow: hidden; display:table-cell;'>"
-								+ "<h3 class='text-center' >"+result.mainList[i].title+"</h3>"
+							"<div class='data-item col-sm-4 col-md-3 col-xs-6' data-id="+result.mainList[i].id+" style='border: 1px solid; min-height: 20rem; max-height: 20rem; overflow: hidden; display:table-cell; cursor: pointer; '>"
+								+ "<h3 class='text-center' style='font-size:20px;'>"+result.mainList[i].title+"</h3>"
 								+ "<p>"+result.mainList[i].subTitle+"</p>"
 								+ "</div>")
 				} 

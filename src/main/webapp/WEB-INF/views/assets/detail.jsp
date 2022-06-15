@@ -25,8 +25,10 @@
 	
 </head>
 <body class="home">
-<header id="header">
-	<div id="head" class="parallax" parallax-speed="2" style="padding:0px;">
+<header id="header">		
+	
+		<div id="head" class="parallax" parallax-speed="2" style="padding: 0;">
+		
 		<% if(session.getAttribute("role") == null || session.getAttribute("role") == ""){ %>
 			<div style="text-align: right; padding-right: 3vw;" >
 				<span onclick="location.href='/moveToLogin'" >login</span> 
@@ -40,17 +42,23 @@
 				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
 			</div> 
 		<% } %>
-		<h1 id="logo" class="text-center" onclick="location.href='/'" style="font-weight:900; height: 200px; overflow: hidden; margin: 0;">
-			<img alt="logo" src="${path}/resources/images/logo.svg" onclick="callList();" style="position: relative; top: -100px; left: -300px;"/>
-		</h1>
-		
-		<div class="entry-meta" style="text-align: center; margin-top: 50px;"> 
-			<span class="posted-on"><time class="entry-date published">${regDate}</time></span>			
-		</div>
-		
-	</div>
-	<hr>
-</header>
+			<div class="text-center" style=" height: 100px; display: flex; justify-content: center; "> 
+				<div class="col-md-9 col-sm-12	" style=" display: flex; justify-content: space-around;">
+					<div class="" style="width: 34%"> 
+						<img alt="logo" src="${path}/resources/images/logo.png" onclick="location.href='/';" style="height: 3.3rem; cursor: pointer; "/>
+					</div>
+					<div class="" style="width: 33%; overflow: hidden;">
+						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
+					</div>
+					<div class="" style="width: 33%; overflow: hidden;" >
+						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
+					</div> 
+				</div>	
+				
+			</div>
+		</div> 
+		<hr>
+	</header>
 
 <main id="main" style="min-height:62vh;">
 	<div class="container">
@@ -67,24 +75,35 @@
 				<article class="post">
 
 					<header class="entry-header">
-						<h1 class="entry-title">${title}</h1>
+						<h2 class="entry-title" style="font-size: 25px; font-weight: 900;">${title}</h2>
 					</header>
 					<div class="entry-content">
 						${content}
 					</div>
+					<div style="display: flex; justify-content:flex-end; margin-bottom: 40px;" >
+						<span class="posted-on" ><time class="entry-date published" style="font-size: 13px;">발행일  ${regDate}</time></span>
+					</div>
 					<div id="writerInfo">
 						<div style="font-weight: 900;">ABOUT AUTHOR</div>
 						<br>
-						<div id="userID" style="color: #FF9100; font-weight: 900; padding-left: 15px;"> &nbsp;&nbsp;&nbsp; 박원빈</div>
+						<div style="padding-left: 15px;">
+							<span id="userID" style="color: #FF9100; font-weight: 900; "></span><span style="font-weight: 900;"> 기자</span>
+							&nbsp; &nbsp; &nbsp; 
+							<span id="userEmail" style="padding-left: 15px;"></span>
+						</div>
+							
 						<br>
-						<div id="userIntro" style="padding-left: 15px;"> &nbsp;&nbsp;&nbsp; 안녕하세요 아이유입니다.</div>	
+						<div id="userIntro" style="padding-left: 15px;"></div>	
 						
 					</div>
+					
+					
 					
 				</article> 
 			</div> 
 		</div>
 	</div>
+	
 </main>
 	<footer id="footer" 
 			style="border-top: 1px solid gray;">
@@ -94,10 +113,11 @@
 			 	padding-left:50px;
 				padding-right:50px;
 				font-size:1rem;
+				line-height: 36px; 
 				"> 
-			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
-			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
-			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
+			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">의라차차</p>
+			<span>회사 : 빈픽쳐스 사업자번호 : 236-30-00585  등록번호 : 서울, 아05141</span><br>	
+			<span>등록일자 : 2018.4.25 주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
 			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
 			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
 		</div>
@@ -113,8 +133,8 @@
 				justify-content: space-between;">
 			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
 			<div> 
-				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
-				<span><a href="#" onclick="location.href='/teenProtect'"> 청소년보호정책</a></span>
+				<span ><a href="/eurachacha">About의라차차</a></span> 
+				<span><a href="/teenProtect"> 청소년보호정책</a></span>
 			</div>	
 		</div>
 	</footer>
@@ -141,7 +161,8 @@ const getUser = function(id) {
 		url : "/getUser/"+id,
 		success : function(result) {
 			$("#userID").html(result.user.name);
-			$("#userIntro").html(result.user.email);
+			$("#userEmail").html(result.user.email);
+			$("#userIntro").html(result.user.introduce);
 			console.log(result)
 		},
 		error : function(result) {
