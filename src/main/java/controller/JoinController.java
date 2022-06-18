@@ -25,7 +25,6 @@ public class JoinController {
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String login(HttpServletRequest req, HttpSession session, User user, Model model) {
-		System.out.println(user+"????asdasd");
 		if (userDao.join(user) > 0) {
 			return "assets/index";
 		}

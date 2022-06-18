@@ -1,0 +1,58 @@
+@media(min-width:1025px){
+	#navDiv {
+		display: flex;
+		justify-content: center;
+	}
+	
+	nav {
+		width: 70%; 
+	}
+	
+	#navUl {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		padding: 0;
+	}
+	
+	#navUl>li {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	
+	#navUl>li>a {
+		text-align: center;
+		color: black;
+		text-decoration: none;
+	}
+
+}
+@media ( min-width : 0px) and (max-width: 1025px) {
+	#navDiv {
+		display: flex;
+		justify-content: center;
+	}
+	nav {
+		width: 80%;
+		overflow: scroll;
+		-ms-overflow-style: none;
+	}
+	nav::-webkit-scrollbar {
+		display: none;
+	}
+	#navUl {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+	}
+	#navUl>li {
+		text-align: center;
+		padding-left: 0.7rem;
+		padding-right: 0.7rem;
+		min-width: 7rem;
+	}
+	#navUl>li>a {
+		color: black;
+		text-decoration: none;
+	}
+}

@@ -35,8 +35,7 @@ public class UserController {
 		Map<String,Object> returnMap = new HashMap<String, Object>();
 		returnMap.put("userList", userList);
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		System.out.println(gson.toJson(returnMap).toString());
-		
+				
 		return gson.toJson(returnMap).toString();
 	}
 	
@@ -48,7 +47,6 @@ public class UserController {
 		Map<String,Object> returnMap = new HashMap<String, Object>();
 		returnMap.put("user", user);
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		System.out.println(gson.toJson(returnMap).toString());
 		
 		return gson.toJson(returnMap).toString();
 	}

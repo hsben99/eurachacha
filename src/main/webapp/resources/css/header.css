@@ -1,0 +1,55 @@
+@media ( min-width : 1025px) {
+	header {
+		display: flex;
+		justify-content: center;
+	}
+	#head {
+		width: 70%;
+		height: 200px;
+	}
+	#head span {
+		margin: 0;
+	}
+	.loginDiv {
+		text-align: right;
+	}
+	.loginDiv>span {
+		margin-right: 5%;
+	}
+	#logoDiv {
+		
+	}
+	#logoDiv>img {
+		width: 20rem;
+	}
+}
+
+@media ( min-width : 0px) and (max-width: 1025px) {
+	header {
+		display: flex;
+		justify-content: center;
+	}
+	#head {
+		width: 80%;
+		height: 200px;
+	}
+	#head span {
+		margin: 0;
+	}
+	.loginDiv {
+		position:absolute;
+		top:1rem;
+		right:3rem;	
+		text-align: right;
+		 
+	}
+	.loginDiv>span {
+		
+	}
+	#logoDiv {
+		text-align: center;
+	}
+	#logoDiv>img {
+		width: 30rem;
+	}
+}

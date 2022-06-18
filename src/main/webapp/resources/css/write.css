@@ -1,0 +1,26 @@
+main{
+	min-height: 62vh;
+	display: flex;
+	justify-content: center; 
+}
+main > div{
+	width: 70%; 
+}
+	
+.titles {
+  width:60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#category {
+	  padding: 16px 20px;
+	  border: none; 
+	  border-radius: 4px;
+	  background-color: #f1f1f1;
+}
+#editorDiv{
+	width: 70%;	
+	  
+}

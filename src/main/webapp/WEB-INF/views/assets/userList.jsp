@@ -23,10 +23,6 @@
 
 	<div class="login-page">
 		<div class="form" id="userList">
-			<div style="display: flex;">
-				<input type="text" placeholder="username" name="id" value="asd" disabled="disabled" style="margin:0;"/>
-				<button type="submit">삭제</button>
-			</div>
 		</div>
 	</div>
 
@@ -54,22 +50,33 @@
 	const writeList = function(result){
 		$("#userList").html("");
 		for (var i = 0; i < result.userList.length; i++) {
+			var paramId = result.userList[i].id + "";
+
 			$("#userList").append(
 				'<div style="display: flex; margin-bottom:4px;">'
 					+'<input type="text" value="'+result.userList[i].id+'" disabled="disabled" style="margin:0;"/>'
-					+'<button onclick="deleteUser('+result.userList[i].id+')">삭제</button>'
+					+'<button class="deleteBtn" data-value="'+result.userList[i].id+'">삭제</button>'
 				+'</div>'
 			)
 		}
 	}
 	
+	/* 
+	로컬에서는 되지만 서버에서 안돌아가서 다른방법으로함. 
 	const deleteUser = function(id){
 		if(confirm("정말로 삭제하시겠습니까?")){
 			location.href="deleteUser?id="+id;
 		}
-		
-		
-	}
+	} */
+	
+	$(document).on("click",".deleteBtn",function(){
+		if(confirm("정말로 삭제하시겠습니까?")){
+			var id = $(this).attr("data-value");
+			location.href="deleteUser?id="+id;
+		}
+	});
+	
+	
 	
 	</script>	
 </body>

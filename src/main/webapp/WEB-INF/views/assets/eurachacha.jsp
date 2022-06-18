@@ -37,27 +37,8 @@
 <!--[if lt IE 9]> <script src="${path}/resources/js/html5shiv.js"></script> <![endif]-->
 </head>
 <body class="home">
-
-
-	<header id="header">
-		<div id="head" class="parallax" parallax-speed="2" style="padding:0px;">
-		
-		<% if(session.getAttribute("id") == null || session.getAttribute("id") == ""){ %>
-			<div style="text-align: right; padding-right: 3vw;" >
-				<span onclick="location.href='/moveToLogin'" >login</span> 
-			</div>
-			<% }else{ %>
-			 
-			<div style="text-align: right; padding-right: 3vw;" >
-				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write</span>
-			</div>  
-			<% } %>
-			<h1 id="logo" class="text-center" onclick="location.href='/'" style="overflow: hidden; height: 200px; margin: 0;">
-				<img alt="logo" src="${path}/resources/images/logo.svg" style="position: relative; top: -100px; left: -300px;"/>
-			</h1>
-		</div>
-	</header>
-	<hr> 
+	<jsp:include page="./header.jsp"></jsp:include>
+	
 	<main id="main" style="min-height:60vh;"> 
 
 		<div class="container" style="text-align: center;">
@@ -72,7 +53,9 @@
 		</div>
 
 	</main>
-
+	
+	<jsp:include page="./footer.jsp"></jsp:include>
+<!-- 
 	<footer id="footer" 
 			style="border-top: 1px solid gray;">
 		<div class="widget-body" 
@@ -81,10 +64,11 @@
 			 	padding-left:50px;
 				padding-right:50px;
 				font-size:1rem;
+				line-height: 36px; 
 				"> 
-			<p style="font-weight: 900; margin-bottom:5px;">빈픽쳐스</p>
-			<span>사업자번호 : 236-30-00585  등록번호 : 서울, 아05141 등록일자 : 2018.4.25</span><br>	
-			<span>주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
+			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">의라차차</p>
+			<span>회사 : 빈픽쳐스 사업자번호 : 236-30-00585  등록번호 : 서울, 아05141</span><br>	
+			<span>등록일자 : 2018.4.25 주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
 			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
 			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
 		</div>
@@ -100,11 +84,12 @@
 				justify-content: space-between;">
 			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
 			<div> 
-				<span ><a href="#" onclick="location.href='/eurachacha'">About BEENPICTURES</a></span>
-				<span><a href="#" onclick="location.href='/teenProtect'"> 청소년보호정책</a></span>
+				<span ><a href="/eurachacha">About의라차차</a></span> 
+				<span><a href="/teenProtect"> 청소년보호정책</a></span>
 			</div>	
-		</div>
-	</footer>
+		</div> 
+	</footer> -->
+	
 	<script>
 		$(function() {
 			callList();

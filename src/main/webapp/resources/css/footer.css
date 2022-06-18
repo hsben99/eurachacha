@@ -1,0 +1,74 @@
+@media ( min-width : 768px) {
+	footer {
+		border-top: 1px solid gray;
+	}
+	#top {
+		margin-bottom: 20px;
+		padding-left: 50px;
+		padding-right: 50px;
+		font-size: 1rem;
+		line-height: 36px;
+	}
+	#top>#business-name {
+		font-weight: 900;
+		margin-bottom: 5px;
+		line-height: 50px;
+	}
+	#top>#publisher {
+		font-weight: 900;
+		font-style: italic;
+	}
+	#bottom {
+		background-color: #212a34;
+		color: white;
+		padding-top: 20px;
+		padding-bottom: 70px;
+		padding-left: 50px;
+		padding-right: 50px;
+		display: flex;
+		justify-content: space-between;
+	}
+	#bottom a {
+		text-decoration: none;
+		color: white;
+	}
+}
+
+@media ( min-width : 0px) and (max-width: 767px) {
+	footer {
+		border-top: 1px solid gray;
+	}
+	#top {
+		margin-bottom: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		font-size: 0.8rem;
+		line-height: 20px;
+	}
+	#top>#business-name {
+		font-weight: 900;
+		margin-bottom: 2px;
+		line-height: 25px;
+	}
+	#top > div > span{
+		display: block;
+	}
+	#top>#publisher {
+		font-weight: 900;
+		font-style: italic;
+	}
+	#bottom {
+		background-color: #212a34;
+		color: white;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	#bottom a {
+		text-decoration: none;
+		color: white;
+	}
+
+
+}

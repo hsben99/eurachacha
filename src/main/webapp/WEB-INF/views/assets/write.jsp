@@ -8,48 +8,34 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<!-- ckeditor -->
 	<script type="text/javascript" src="${path}/resources/ckeditor/ckeditor.js" charset="utf-8"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	
 	<title>글작성</title>
-	
-	<style>
-		#category {
-		  width: 7%;
-		  padding: 16px 20px;
-		  border: none; 
-		  border-radius: 4px;
-		  background-color: #f1f1f1;
-		}
-		
-		.titles {
-		  width: 35%;
-		  padding: 12px 20px;
-		  margin: 8px 0;
-		  box-sizing: border-box;
-		}
-	
-	</style>
+	<link rel="stylesheet" type="text/css" href="${path}/resources/css/write.css">
 </head>
 <body class="home">
-	
-	<div style="text-align: center;">
-		<input type="text" id="title" class="titles" placeholder="title"> 
+<jsp:include page="./header.jsp"></jsp:include>	
+<main>
+	<div>
+		<input type="text" id="title" class="titles" placeholder="title" maxlength="30"> 
 		<select id ="category" style="text-align: center;">
 			<option value="medical" selected="selected">의료·학술</option>
 			<option value="bio">제약·바이오 </option>
 			<option value="tech">의료기기·IT</option>
 		</select>
-	</div>
-	<div style="text-align: center; ">
- 		<input type="text" id="subTitle" class="titles" placeholder="subTitle" style="width: 42%;">
-	</div> 
+		<!-- <input type="text" id="subTitle" class="titles" placeholder="subTitle"> -->
+		<div id="editorDiv">
+			<textarea id="bookIntro_textarea" ></textarea>
+		</div>	
 		
-	<textarea id="bookIntro_textarea" ></textarea>
+		<button id="testBtn" onclick="writeContent()">글쓰기</button>
+	</div>
+</main>	
 	
-	<button id="testBtn" onclick="writeContent()">글쓰기</button>
+	
+	
+<jsp:include page="./footer.jsp"></jsp:include>
 
 <script>
 	var ckeditor_config = {

@@ -31,101 +31,25 @@
 <!-- Custom styles -->
 <link rel="stylesheet" href="${path}/resources/css/styles.css">
 
+<link rel="stylesheet" type="text/css" href="${path}/resources/css/index.css">
+
 
 </head>
-<body class="home">
-
-	<header id="header">		
-	
-		<div id="head" class="parallax" parallax-speed="2" style="padding: 0;">
+<body>
+	<jsp:include page="./header.jsp"></jsp:include>
+	<jsp:include page="./navbar.jsp"></jsp:include>
+	<main>
+		<div id="dataList" class="row" style="padding: 40px;">
 		
-		<% if(session.getAttribute("role") == null || session.getAttribute("role") == ""){ %>
-			<div style="text-align: right; padding-right: 3vw;" >
-				<span onclick="location.href='/moveToLogin'" >login</span> 
-			</div>
-		<% }else if((session.getAttribute("role") != null || session.getAttribute("role") != "") && !(session.getAttribute("role").equals("admin")) ){ %>	
-			<div style="text-align: right; padding-right: 3vw;" >
-				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write</span>
-			</div> 
-		<% }else if(session.getAttribute("role") != null || session.getAttribute("role") != "" && session.getAttribute("role").equals("admin") ){ %>			 
-			<div style="text-align: right; padding-right: 3vw;" >
-				<span onclick="location.href='/logout'" >logout</span> | <span onclick="location.href='/moveWritePage'" >write	</span> | <span onclick="location.href='/moveToAdmin'" > admin</span>
-			</div> 
-		<% } %>
-			<div class="text-center" style=" height: 100px; display: flex; justify-content: center; "> 
-				<div class="col-md-9 col-sm-12	" style=" display: flex; justify-content: space-around;">
-					<div class="" style="width: 34%"> 
-						<img alt="logo" src="${path}/resources/images/logo.png" onclick="callList();" style="height: 3.3rem; cursor: pointer; "/>
-					</div>
-					<div class="" style="width: 33%; overflow: hidden;">
-						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
-					</div>
-					<div class="" style="width: 33%; overflow: hidden;" >
-						<!-- <img alt="" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"> -->
-					</div> 
-				</div>	
-				
-			</div>
-		</div> 
-		<nav class="">
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#" onclick="callList('1','','');" style="font-weight:700; color: black;" >전체</a></li>
-						<li><a href="#" onclick="callList('1','','medical');" style="font-weight:700; color: black; " >의료·학술</a></li>
-						<li><a href="#" onclick="callList('1','','bio');" style="font-weight:700; color: black;">제약·바이오</a></li>
-						<li><a href="#" onclick="callList('1','','tech');" style="font-weight:700; color: black;">의료기기·IT</a></li> 
-					</ul>
-				</div>
-		</nav>
-	</header>
-	<main id="main" style="min-height:62vh;">
-
-		<div class="container">
-			<div class="row section featured topspace">
-				<div id="dataList" class="row">
-				
-				</div>
-			</div> 
-			<center class="" >
-				<ul class="pagination" id="pageDiv">
-				</ul>
-			</center>
 		</div>
 	</main>
+	
+	<div class="" style="display: flex; justify-content: center;">
+		<ul id="pageDiv" class="pagination">
+		</ul>
+	</div>
 
-	<footer id="footer" 
-			style="border-top: 1px solid gray;">
-		<div class="widget-body" 
-			 style="
-			 	margin-bottom:20px;
-			 	padding-left:50px;
-				padding-right:50px;
-				font-size:1rem;
-				line-height: 36px; 
-				"> 
-			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">의라차차</p>
-			<span>회사 : 빈픽쳐스 사업자번호 : 236-30-00585  등록번호 : 서울, 아05141</span><br>	
-			<span>등록일자 : 2018.4.25 주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
-			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
-			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
-		</div>
-		<div 
-			style="
-				background-color: #212a34; 
-				color:white; 
-				padding-top: 20px;
-				padding-bottom: 70px;
-				padding-left:50px;
-				padding-right:50px;
-				display: flex;
-				justify-content: space-between;">
-			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
-			<div> 
-				<span ><a href="/eurachacha">About의라차차</a></span> 
-				<span><a href="/teenProtect"> 청소년보호정책</a></span>
-			</div>	
-		</div>
-	</footer>
+<jsp:include page="./footer.jsp"></jsp:include>
 	
 	<script>
 	$(function() {	
@@ -161,13 +85,15 @@
 				$("#dataList").html("");
 
 				//받은 데이터를 태그로만들어서 append
-				/* for (var i = result.mainList.length - 1; i >= 0; i--) { */
 				for (var i = 0; i < result.mainList.length; i++) {
-					$("#dataList")
-						.append(
-							"<div class='data-item col-sm-4 col-md-3 col-xs-6' data-id="+result.mainList[i].id+" style='border: 1px solid; min-height: 20rem; max-height: 20rem; overflow: hidden; display:table-cell; cursor: pointer; '>"
-								+ "<h3 class='text-center' style='font-size:20px;'>"+result.mainList[i].title+"</h3>"
-								+ "<p>"+result.mainList[i].subTitle+"</p>"
+					var mainListDate =result.mainList[i].regDate.substr(0,10);
+					var removeContentsHtml = result.mainList[i].content.replace(/<[^>]*>?/g, '');
+					
+					$("#dataList").append(
+							"<div class='data-item col-xs-12 col-sm-6 col-md-4 col-lg-3 ' data-id="+result.mainList[i].id+" style='border: 1px solid gray; height:300px; max-width:30rem;'>"
+								+ "<h3 style='height:4rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;'>"+result.mainList[i].title+"</h3>"
+								+ "<p style='height:3rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;'>"+removeContentsHtml+"</p>"
+								+ "<p style='margin-top:5rem; margin-bottom:0;'>"+mainListDate+"</p>" 
 								+ "</div>")
 				} 
 			},
@@ -196,9 +122,8 @@
 			url:"/pageInfo.do",
 			data: JSON.stringify(pageData),
 			success:function(result){
-				//기존 동적생성된 페이징 삭제
 				$("#pageDiv").html("");
-				//이전, 다음버튼에 쓰기위한 숫자
+				
 				var sPageNo = result.sPageNo;
 				var ePageNo = result.ePageNo;					
 				var before = parseInt(sPageNo)-1;
@@ -213,7 +138,6 @@
 				}
 				//페이징					
 				for(var j = sPageNo; j <= ePageNo; j++){
-					//$("#pageDiv").append("<li ><a><button class='btn"+j+"' onclick=callList("+j+",'"+searchKey+"')>"+j+"</button></a></li>");
 					$("#pageDiv").append("<li ><a onclick=callList('"+j+"','"+searchKey+"')>"+j+"</a></li>");
 				}
 				//다음버튼 표시 조건걸기
