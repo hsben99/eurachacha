@@ -41,9 +41,27 @@
 	var ckeditor_config = {
 			resize_enable : false,
 			enterMode : CKEDITOR.ENTER_BR,
-			filebrowserUploadUrl : "/fileUpload.do"
+			width:'100%',
+            height:'400px',
+			filebrowserImageUploadUrl : "/fileUpload.do"
 	};
 	CKEDITOR.replace("bookIntro_textarea",ckeditor_config);
+	
+	
+	//이미지업로드 관련 불필요한 탭 삭제
+	CKEDITOR.on('dialogDefinition', function( ev ){
+         var dialogName = ev.data.name;
+         var dialogDefinition = ev.data.definition;
+       
+         switch (dialogName) {
+             case 'image': //Image Properties dialog
+                 //dialogDefinition.removeContents('info');
+                 dialogDefinition.removeContents('Link');
+                 dialogDefinition.removeContents('advanced');
+                 break;
+         }
+    });
+		
 	
 var writeContent = function(){ 
 	var title = $("#title").val();

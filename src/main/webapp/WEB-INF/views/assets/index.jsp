@@ -39,7 +39,7 @@
 	<jsp:include page="./header.jsp"></jsp:include>
 	<jsp:include page="./navbar.jsp"></jsp:include>
 	<main>
-		<div id="dataList" class="row" style="padding: 40px;">
+		<div id="dataList" class="row" style="min-height: 62vh; padding: 40px;">
 		
 		</div>
 	</main>

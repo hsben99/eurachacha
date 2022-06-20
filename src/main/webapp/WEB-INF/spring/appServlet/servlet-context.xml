@@ -31,10 +31,10 @@
 	</beans:bean> 
 	
 	<beans:bean class="java.lang.String" id="uploadPath">
-		<beans:constructor-arg value="C:\Users\hsben\uploadTest"></beans:constructor-arg>
+		<beans:constructor-arg value="C:\Users\hsben\uploadTest\"></beans:constructor-arg>
 	</beans:bean>
 	
-	<beans:bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 	
 	
 	<context:component-scan base-package="controller, dao, dto" />
