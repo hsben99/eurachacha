@@ -5,9 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,22 +25,39 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileController {
 	
 	private static final Logger log = LoggerFactory.getLogger(FileController.class);
-	
-//	@Resource(name = "uploadPath")
-//	private String uploadPath;
 
 	@RequestMapping(value = "/fileUpload.do", method = RequestMethod.POST)
 	@ResponseBody
 	public void ckUpload( HttpServletRequest request, HttpServletResponse response, @RequestParam MultipartFile upload)
 			throws Exception {
+		PrintWriter printWriter = response.getWriter();
 		OutputStream out = null;
-        PrintWriter printWriter = null;
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
+        
+		if(upload.isEmpty()) {
+			return;
+		}
+		
+		if(upload.getSize() > 1000000) {
+			printWriter.println("{");
+			printWriter.println(" \"uploaded\": 0, ");
+            printWriter.println(" \"error\":");
+            printWriter.println("{\"message\":\"The fileSize is too big(up to 1MB)\"}");
+            printWriter.println("}");
+            printWriter.flush();
+			new Exception("파일사이즈가 너무 큽니다");
+			return;
+		}
  
         try{
- 
-            String fileName = upload.getOriginalFilename();
+        	
+        	DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS"); 
+    		Calendar cal = Calendar.getInstance(); 
+    		String time = dateFormat.format(cal.getTimeInMillis());
+    		
+    		String fileName = String.format("%s_%s",time,upload.getOriginalFilename());
+    		
             byte[] bytes = upload.getBytes();
  
             String realPath = request.getSession().getServletContext().getRealPath("/resources/images/");
@@ -45,7 +66,6 @@ public class FileController {
             out = new FileOutputStream(new File(realPath + fileName));
             out.write(bytes);
             
-            printWriter = response.getWriter();
             String fileUrl = "/resources/images/"+fileName;//url경로
             
             printWriter.println("{");
