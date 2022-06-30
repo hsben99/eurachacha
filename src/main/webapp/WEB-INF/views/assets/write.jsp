@@ -24,7 +24,6 @@
 			<option value="bio">제약·바이오 </option>
 			<option value="tech">의료기기·IT</option>
 		</select>
-		<!-- <input type="text" id="subTitle" class="titles" placeholder="subTitle"> -->
 		<div id="editorDiv">
 			<textarea id="bookIntro_textarea" ></textarea>
 		</div>	
@@ -44,6 +43,7 @@
 			width:'100%',
             height:'400px',
 			filebrowserImageUploadUrl : "/fileUpload.do"
+
 	};
 	CKEDITOR.replace("bookIntro_textarea",ckeditor_config);
 	

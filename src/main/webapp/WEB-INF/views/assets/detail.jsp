@@ -40,26 +40,38 @@
 					|| session.getAttribute("role").equals("admin"))) {
 			%>
 			<div style="text-align: right;">
-				<span onclick="location.href='/deleteById/${id}'">삭제하기</span>
+				<span onclick="location.href='/deleteById/${model.id}'">삭제하기</span>
 			</div>
 			<%
 				}
 			%>
 			<div class="row topspace">
 				<div class="col-sm-8 col-sm-offset-2">
-
 					<article class="post">
-
+						<div id="category" style="color:black; display: flex; justify-content: center;">
+							<c:choose>
+						         <c:when test = "${model.category eq 'medical'}">
+					           		 <p>의료·학술</p>
+						         </c:when>
+						         <c:when test = "${model.category eq 'bio'}">
+						         	<p>제약·바이오</p>
+						         </c:when>
+						         <c:when test = "${model.category eq 'tech'}">
+						         	<p>의료기기·IT</p>
+						         </c:when>
+						     </c:choose>
+							<%-- <p>${model.category}</p> --%>
+						</div>
 						<header class="entry-header">
 							<h2 class="entry-title"
-								style="font-size: 25px; font-weight: 900;">${title}</h2>
+								style="font-size: 25px; font-weight: 900;">${model.title}</h2>
 						</header>
-						<div class="entry-content">${content}</div>
+						<div class="entry-content">${model.content}</div>
 						<div
 							style="display: flex; justify-content: flex-end; margin-bottom: 40px;">
 							<span class="posted-on"><time
 									class="entry-date published" style="font-size: 13px;">발행일
-									${regDate}</time></span>
+									${model.regDate}</time></span>
 						</div>
 						<div id="writerInfo">
 							<div style="font-weight: 900;">ABOUT AUTHOR</div>
@@ -87,7 +99,7 @@
 	<script>
 		$(function() {
 			//파라미터 jsp el임
-			getUser('${writerId}');
+			getUser('${model.writerId}');
 		})
 
 		const getUser = function(id) {

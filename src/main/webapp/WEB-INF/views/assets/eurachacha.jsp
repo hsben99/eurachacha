@@ -55,41 +55,7 @@
 	</main>
 	
 	<jsp:include page="./footer.jsp"></jsp:include>
-<!-- 
-	<footer id="footer" 
-			style="border-top: 1px solid gray;">
-		<div class="widget-body" 
-			 style="
-			 	margin-bottom:20px;
-			 	padding-left:50px;
-				padding-right:50px;
-				font-size:1rem;
-				line-height: 36px; 
-				"> 
-			<p style="font-weight: 900; margin-bottom:5px; line-height: 50px">의라차차</p>
-			<span>회사 : 빈픽쳐스 사업자번호 : 236-30-00585  등록번호 : 서울, 아05141</span><br>	
-			<span>등록일자 : 2018.4.25 주소 : 서울시 성동구 무학로 14길18 가동 602호 (홍익동 한신그린빌)</span><br>
-			<span>TEL : 02-470-2014   FAX : 050-7711-8367  E-mail : contact@beenpictures.com</span><br>
-			<span style="font-weight: 900;   font-style: italic;">발행인 겸 편집인 : 박원빈  개인정보책임자  : 박순보  청소년보호책임자 : 박지연</span><br>
-		</div>
-		<div 
-			style="
-				background-color: #212a34; 
-				color:white; 
-				padding-top: 20px;
-				padding-bottom: 70px;
-				padding-left:50px;
-				padding-right:50px;
-				display: flex;
-				justify-content: space-between;">
-			<span >Copyrightⓒ Been Pictures, Ltd. All Rights Reserved.</span>
-			<div> 
-				<span ><a href="/eurachacha">About의라차차</a></span> 
-				<span><a href="/teenProtect"> 청소년보호정책</a></span>
-			</div>	
-		</div> 
-	</footer> -->
-	
+
 	<script>
 		$(function() {
 			callList();
@@ -201,8 +167,17 @@
 	</script>
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script
-		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="${path}/resources/js/template.js"></script>
+	
+	<!-- 네이버 애널리틱스 -->	
+	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+	<script type="text/javascript">
+		if(!wcs_add) var wcs_add = {};
+			wcs_add["wa"] = "151391aa0e09220";
+		if(window.wcs) {
+			wcs_do();
+		}
+	</script>
 </body>
 </html>

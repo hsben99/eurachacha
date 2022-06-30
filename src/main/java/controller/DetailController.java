@@ -19,11 +19,8 @@ public class DetailController {
 	public String detailPage(Model model, @PathVariable String id) {
 		BoardDto dto = new BoardDto();
 		dto = boardDao.getDetail(id);
-		model.addAttribute("title", dto.getTitle());
-		model.addAttribute("regDate", dto.getRegDate());
-		model.addAttribute("content", dto.getContent());		
-		model.addAttribute("id", dto.getId());
-		model.addAttribute("writerId", dto.getWriterId());
+		model.addAttribute("model",dto);
+
 		return "assets/detail";
 	}	
 

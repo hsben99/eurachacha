@@ -83,5 +83,14 @@
 	<script
 		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="${path}/resources/js/template.js"></script>
+	<!-- 네이버 애널리틱스 -->	
+	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+	<script type="text/javascript">
+		if(!wcs_add) var wcs_add = {};
+			wcs_add["wa"] = "151391aa0e09220";
+		if(window.wcs) {
+			wcs_do();
+		}
+	</script>
 </body>
 </html>

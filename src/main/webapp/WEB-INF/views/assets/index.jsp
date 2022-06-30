@@ -10,7 +10,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
-<meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <title >의라차차</title>
@@ -91,7 +90,7 @@
 					
 					$("#dataList").append(
 							"<div class='data-item col-xs-12 col-sm-6 col-md-4 col-lg-3 ' data-id="+result.mainList[i].id+" style='border: 1px solid gray; height:300px; max-width:30rem;'>"
-								+ "<h3 style='height:4rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;'>"+result.mainList[i].title+"</h3>"
+								+ "<p style='font-size:18px; font-weight:800; height:3.2rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;'>"+result.mainList[i].title+"</p>"
 								+ "<p style='height:3rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;'>"+removeContentsHtml+"</p>"
 								+ "<p style='margin-top:5rem; margin-bottom:0;'>"+mainListDate+"</p>" 
 								+ "</div>")
@@ -162,5 +161,14 @@
 	<script
 		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="${path}/resources/js/template.js"></script>
+	<!-- 네이버 애널리틱스 -->	
+	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+	<script type="text/javascript">
+		if(!wcs_add) var wcs_add = {};
+			wcs_add["wa"] = "151391aa0e09220";
+		if(window.wcs) {
+			wcs_do();
+		}
+	</script>
 </body>
 </html>
