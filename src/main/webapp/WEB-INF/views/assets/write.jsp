@@ -65,13 +65,11 @@
 	
 var writeContent = function(){ 
 	var title = $("#title").val();
-	var subTitle = $("#subTitle").val();
 	var content = CKEDITOR.instances.bookIntro_textarea.getData();
 	var category = $("#category").val();
 	
 	var formData = new FormData();
 	formData.append("title",title);
-	formData.append("subTitle",subTitle);
 	formData.append("content",content);
 	formData.append("category",category);	
 	

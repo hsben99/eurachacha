@@ -5,7 +5,6 @@ public class BoardDto {
 	private int runm;
 	private int id;
 	private String title;
-	private String subTitle;
 	private String content;
 	private String regDate;
 	private String deleteYn;
@@ -51,15 +50,7 @@ public class BoardDto {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getSubTitle() {
-		return subTitle;
-	}
-
-	public void setSubTitle(String subTitle) {
-		this.subTitle = subTitle;
-	}
-
+	
 	public String getContent() {
 		return content;
 	}
@@ -86,8 +77,7 @@ public class BoardDto {
 
 	@Override
 	public String toString() {
-		return "BoardDto [runm=" + runm + ", id=" + id + ", title=" + title + ", subTitle=" + subTitle + ", content="
-				+ content + ", regDate=" + regDate + ", deleteYn=" + deleteYn + ", category=" + category + ", writerId="
+		return "BoardDto [runm=" + runm + ", id=" + id + ", title=" + title + ", content="+ content + ", regDate=" + regDate + ", deleteYn=" + deleteYn + ", category=" + category + ", writerId="
 				+ writerId + "]";
 	}
 	

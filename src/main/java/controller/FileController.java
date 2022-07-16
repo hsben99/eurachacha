@@ -61,7 +61,8 @@ public class FileController {
             byte[] bytes = upload.getBytes();
  
             String realPath = request.getSession().getServletContext().getRealPath("/resources/images/");
-            log.info("업로드경로=>"+realPath);
+            
+            log.info("업로드경로=>"+realPath);            
             
             out = new FileOutputStream(new File(realPath + fileName));
             out.write(bytes);

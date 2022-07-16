@@ -40,7 +40,9 @@
 					|| session.getAttribute("role").equals("admin"))) {
 			%>
 			<div style="text-align: right;">
-				<span onclick="location.href='/deleteById/${model.id}'">삭제하기</span>
+				<span onclick="location.href='/deleteById/${model.id}'">삭제</span>
+				
+				<span onclick="location.href='/updateById/${model.id}'">수정</span>
 			</div>
 			<%
 				}
@@ -60,7 +62,6 @@
 						         	<p>의료기기·IT</p>
 						         </c:when>
 						     </c:choose>
-							<%-- <p>${model.category}</p> --%>
 						</div>
 						<header class="entry-header">
 							<h2 class="entry-title"

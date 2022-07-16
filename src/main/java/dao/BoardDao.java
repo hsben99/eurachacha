@@ -18,6 +18,10 @@ public class BoardDao {
 		return session.insert("boardMapper.insertBoard", boardDto);
 	}
 
+	public int updateBoard(BoardDto boardDto) {
+		return session.insert("boardMapper.updateBoard", boardDto);
+	}
+	
 	public BoardDto getDetail(String id) {
 		return session.selectOne("boardMapper.selectOneBoard",id);		
 	}

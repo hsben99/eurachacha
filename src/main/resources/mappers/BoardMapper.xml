@@ -3,11 +3,18 @@
 
 <mapper namespace="boardMapper" >
 
-		<insert id="insertBoard" parameterType="dto.BoardDto">
-		insert into board(title,subTitle, content, deleteYn, regDate, category, writerId) values(
-			#{title},#{subTitle}, #{content}, #{deleteYn}, now(), #{category}, #{writerId}
+	<insert id="insertBoard" parameterType="dto.BoardDto">
+		insert into board(title, content, deleteYn, regDate, category, writerId) values(
+			#{title}, #{content}, #{deleteYn}, now(), #{category}, #{writerId}
 		)
 	</insert>
+	
+	<update id="updateBoard" parameterType="dto.BoardDto">
+		update board set 
+		title=#{title}, content=#{content}, category=#{category}
+		where id=#{id}
+	</update>
+	
 	
 	<select id="selectOneBoard" resultType="dto.BoardDto">
 		select * from board 
