@@ -174,7 +174,7 @@
 	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 	<script type="text/javascript">
 		if(!wcs_add) var wcs_add = {};
-			wcs_add["wa"] = "151391aa0e09220";
+		wcs_add["wa"] = "159d13e8e73ccd0";
 		if(window.wcs) {
 			wcs_do();
 		}
