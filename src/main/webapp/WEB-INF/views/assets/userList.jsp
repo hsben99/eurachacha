@@ -14,8 +14,6 @@
 
 <title>로그인</title>
 
-<link rel="shortcut icon" href="${path}/resources/images/gt_favicon.png">
-
 <link rel="stylesheet" href="${path}/resources/css/login.css">
 
 </head>

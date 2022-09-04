@@ -88,7 +88,6 @@
 			var content = CKEDITOR.instances.bookIntro_textarea.getData();
 			var category = $("#category").val();
 			var id = "${model.id}";
-			console.log("id->"+id);
 
 			var formData = new FormData();
 			formData.append("id", id);

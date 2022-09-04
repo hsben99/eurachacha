@@ -13,8 +13,6 @@
 
 <title>의라차차</title>
 
-<link rel="shortcut icon" href="${path}/resources/images/gt_favicon.png">
-
 <!-- Bootstrap -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css"
@@ -114,7 +112,6 @@
 					$("#userID").html(result.user.name);
 					$("#userEmail").html(result.user.email);
 					$("#userIntro").html(result.user.introduce);
-					console.log(result)
 				},
 				error : function(result) {
 					console.log("기자 정보 error");

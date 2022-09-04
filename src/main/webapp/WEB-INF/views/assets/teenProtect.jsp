@@ -18,8 +18,6 @@
 
 <title>의라차차</title>
 
-<link rel="shortcut icon" href="${path}/resources/images/gt_favicon.png">
-
 <!-- Bootstrap -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css"
@@ -82,7 +80,6 @@
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script
 		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="${path}/resources/js/template.js"></script>
 	<!-- 네이버 애널리틱스 -->	
 	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 	<script type="text/javascript">

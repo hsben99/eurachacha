@@ -13,8 +13,6 @@
 	
 <title>로그인</title>
 
-<link rel="shortcut icon" href="${path}/resources/images/gt_favicon.png">
-
 <link rel="stylesheet" href="${path}/resources/css/login.css">
 
 </head>
@@ -31,7 +29,6 @@
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		
-	<script src="${path}/resources/js/template.js"></script>
+
 </body>
 </html>
